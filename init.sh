@@ -1,20 +1,21 @@
-cd ~/workspace/
+sudo rm -f /usr/bin/python
+sudo ln -s /usr/bin/python3 /usr/bin/python
 
-git clone https://github.com/yyuu/pyenv.git ~/workspace/.pyenv
+# pip install numpy # already satisfied
+# pip install scipy # already satisfied
+# pip install matplotlib # already satisfied
+pip install pandas --user
+pip install seaborn --user
+pip install jupyter --user
+pip install scikit-learn --user
+pip install ipython -U --user
 
-export PYENV_ROOT="$HOME/workspace/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+echo 'export PATH=/home/ubuntu/.local/bin:$PATH' >> ~/.bashrc
 
-pyenv install anaconda3-4.1.1
-pyenv rehash
-pyenv global anaconda3-4.1.1
+jupyter notebook --generate-config
+echo 'c.NotebookApp.ip = "*"' >> ~/.jupyter/jupyter_notebook_config.py
+echo 'c.NotebookApp.open_browser = False' >> ~/.jupyter/jupyter_notebook_config.py
+echo 'c.NotebookApp.notebook_dir = "/home/ubuntu/workspace"' >> ~/.jupyter/jupyter_notebook_config.py
+echo 'c.NotebookApp.port = 8080' >> ~/.jupyter/jupyter_notebook_config.py
 
-sudo pip install seaborn
-
-echo 'export PYENV_ROOT="$HOME/workspace/.pyenv"' >> ~/.bashrc
-echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
-echo 'eval "$(pyenv init -)"' >> ~/.bashrc
-
-mkdir ~/workspace/src
-touch ~/workspace/src/tutorial.py
+jupyter notebook
