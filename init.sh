@@ -21,5 +21,3 @@ echo 'c.NotebookApp.ip = "*"' >> ~/.jupyter/jupyter_notebook_config.py
 echo 'c.NotebookApp.open_browser = False' >> ~/.jupyter/jupyter_notebook_config.py
 echo 'c.NotebookApp.notebook_dir = "/home/ubuntu/workspace"' >> ~/.jupyter/jupyter_notebook_config.py
 echo 'c.NotebookApp.port = 8080' >> ~/.jupyter/jupyter_notebook_config.py
-
-source ~/.bashrc
