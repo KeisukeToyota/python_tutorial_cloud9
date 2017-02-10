@@ -27,4 +27,6 @@ $ jupyter notebook
 ```
 
 下記URLでアクセス可能
+```
 http://<workspace name>-<user name>.c9users.io:8080/
+```
