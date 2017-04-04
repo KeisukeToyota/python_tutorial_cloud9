@@ -59,9 +59,9 @@ test_data = test_df2.values
 xs_test = test_data[:, 1:]
 output = model.predict(xs_test)
 
-zip_date = zip(test_data[:, 0].astype(int), output.astype(int))
+acc = round(model.score(xs, y)*100, 2)
 
-predict_date = list(zip_date)
+print(acc)
 
 # 結果をCSVで保存
 with open("predict_date.csv", "w") as f:
